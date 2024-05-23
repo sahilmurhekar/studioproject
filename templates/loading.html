@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Preloader Animation</title>
+  <title>Royal Music Studios</title>
+  <link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Kameron:wght@400;700&display=swap" rel="stylesheet">
@@ -25,7 +26,7 @@
       flex-direction: column;
       align-items: center;
       text-align: center;
-      padding: 0% 20%;
+      padding: 0% 18%;
     }
 
     #preloader-container {
@@ -33,6 +34,10 @@
       margin-top: 20px;
       position: relative;
       height: 10px; /* Set a fixed height */
+      opacity: 0;
+      transform: translateY(50px);
+      animation: fadeInUp 1s forwards;
+      animation-delay: 0.5s;
     }
 
     #preloader {
@@ -67,7 +72,7 @@
       opacity: 0;
       transform: translateY(50px);
       transition: opacity 0.5s ease, transform 0.5s ease;
-      margin-top: 20px;
+      margin-top: 0px;
     }
 
     #main-button {
@@ -100,6 +105,10 @@
         1px -1px 0 #ffffff,
         -1px 1px 0 #ffffff,
         1px 1px 0 #ffffff;
+      opacity: 0;
+      transform: translateY(50px);
+      animation: fadeInUp 1s forwards;
+      animation-delay: 0.5s;
     }
 
     h2 {
@@ -108,9 +117,30 @@
       font-family: Kameron;
       font-weight: 100;
       letter-spacing: 5px;
+      opacity: 0;
+      transform: translateY(50px);
+      animation: fadeInUp 1s forwards;
+      animation-delay: 0.5s;
     }
 
-    @media (max-width: 768px) {
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(50px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 1200px) {
+        h1{
+            font-size: 72px;
+        }
+    }
+
+    @media (max-width: 950px) {
       h2 {
         font-size: 18px;
       }
