@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>contact</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Darker+Grotesque:wght@300..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+    <style>
+      * {
+          margin: 0;
+          padding: 0;
+      }
+      html, body {
+          background-color: #141414;
+      }
+      #contactheading {
+          text-align: start;
+          position: absolute;
+          top: 0;
+          left: 10px;
+          width: 100%;
+          z-index: -1;
+          padding: 30px;
+      }
+      #Contactheading h1 {
+          font-family: 'Darker Grotesque', sans-serif;
+          font-size: 15vw;
+          font-weight: 900;
+          line-height: 0.7;
+          color:rgba(45, 45, 45, 0.2);
+          margin-bottom: 10px;
+          margin-top: 40px;
+          margin-right: 50px;
+          margin-left: 50px;
+      }
+      #connect {
+          display: flex;
+          margin-left: 180px; /* Added margin-left for alignment */
+      }
+      #connecticon {
+          height: 25px;
+          width: 25px;
+          border-radius: 50%;
+          background-color: white;
+          border: 1px solid white;
+          margin-right: 20px;
+      }
+      #connect h2 {
+          color: white;
+          font-family: 'Montserrat', sans-serif;
+          letter-spacing: 2px;
+      }
+      #connect-items {
+          display: flex;
+          align-items: center;
+      }
+      #name, #message {
+          display: block;
+          margin-top: 20px;
+          margin-left: 180px;
+      }
+      #name input, #message textarea {
+          display: block;
+          width: 700px;
+          padding: 10px;
+          border: 1px solid #110000;
+          border-radius: 0px;
+          background-color: #333;
+          color: rgba(6, 6, 6, 0.406);
+          font-family: 'Montserrat', sans-serif;
+      }
+      #message textarea {
+          height: 100px;
+      }
+      ::placeholder {
+          color: rgba(255, 255, 255, 0.5);
+          font-family: 'Montserrat', sans-serif;
+      }
+      #sendbutton {
+          display: flex;
+          justify-content: left;
+          margin-top: 20px;
+          margin-left: 180px;
+      }
+      #sendbutton button {
+          background-color: #141414;
+          color: white;
+          padding: 10px 30px;
+          border-color: white;
+          border-radius: 0px;
+          font-family: 'Montserrat', sans-serif;
+          margin-bottom: 40px;
+      }
+      #footer{
+        height: 80px;
+        background-color: 454545;
+        padding-top: 10px;
+        text-decoration-color: white;
+
+      }
+    </style>
+  </head>
+  <body>
+    <div id="contact">
+        <div id="Contactheading">
+            <h1>CONTACT</h1>
+        </div>
+        <div id="connect">
+            <div id="connect-items">
+                <div id="connecticon"></div>
+                <h2>CONNECT WITH ME</h2>
+            </div>
+        </div>
+        <div id="name">
+            <input type="text" placeholder="Full Name">
+        </div>
+        <div id="name">
+            <input type="text" placeholder="Email">
+        </div>
+        <div id="name">
+            <input type="text" placeholder="Subject">
+        </div>
+        <div id="message">
+            <textarea placeholder="Message"></textarea>
+        </div>
+        <div id="sendbutton">
+            <button>SEND MESSAGE</button>
+        </div>
+    
+    </div>
+  </body>
+</html>
