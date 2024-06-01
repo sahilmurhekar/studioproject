@@ -299,6 +299,19 @@
             color: white;
             font-size: 22px;
         }
+        .cursor{
+          position: fixed;
+          width: 30px;
+          height: 30px;
+          border-radius: 50%;
+          background: #fff;
+          transition:0.1s ;
+          transform: translate(-50%,-50%);
+          pointer-events: none;
+          mix-blend-mode: difference;
+        
+        }
+        ul li:hover~ .cursor
         
     </style>
 </head>
@@ -329,9 +342,17 @@
               <li class="nav-item">
                 <a class="nav-link" href="#">Contact</a>
               </li>
+              <div class="cursor"></div>
             </ul>
           </div>
         </div>
+        <script>
+          const cursor = document.querySelector('.cursor');
+          document.addEventListener('mousemove', (e)=>{
+            cursor.style.left=e.pageX + 'px';
+            cursor.style.top=e.pageY + 'px';
+          })
+        </script>
       </nav>
       <main>
         <h1>SAHIL<br>MURHEKAR</h1>
