@@ -1,23 +1,14 @@
 import React from 'react'
 import Navbar from '../components/Navbar'
-import Hero from '../components/Hero'
-import About from '../components/About'
-import Services from '../components/Services'
-import Contact from '../components/Contact'
-import Footer from '../components/Footer'
-import AnimatedCursor from '../components/AnimatedCursor'
 
 const Home = () => {
   return (
     <>
-    <AnimatedCursor />
-              <Navbar />
-              <Hero />
-              <About />
-              <Services />
-              <Contact />
-              <Footer />
-            </>
+    <Navbar/>
+    <div className='mt-16 px-[5%] md:px-[10%] flex flex-row gap-20'>
+        This is Home
+    </div>
+    </>
   )
 }
 

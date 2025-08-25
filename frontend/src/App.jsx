@@ -1,25 +1,20 @@
-import { Routes, Route, BrowserRouter } from 'react-router-dom'
-import React from 'react'
-
-import BeatsPaid from './pages/BeatsPaid'
-import BeatsFree from './pages/BeatsFree'
+import './App.css'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Home from './pages/Home'
-import Works from './pages/Works'
+import Gallery from './pages/Gallery'
+import Beats from './pages/Beats'
+import Payment from './pages/Payment'
 
 function App() {
   return (
-    <BrowserRouter>
-      <div className="animate-fade-in min-h-screen transition duration-700">
+    <Router>
         <Routes>
-          <Route index element={<Home />} />
-          <Route path="/" element={<Home />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/beats/free" element={<BeatsFree />} />
-          <Route path="/beats/paid" element={<BeatsPaid />} />
-          <Route path="/works" element={<Works />} />
+            <Route path='/' element={<Home/>}/>
+            <Route path='/gallery' element={<Gallery/>}/>
+            <Route path='/beats' element={<Beats/>}/>
+            <Route path='/payment' element={<Payment/>}/>
         </Routes>
-      </div>
-    </BrowserRouter>
+    </Router>
   )
 }
 
