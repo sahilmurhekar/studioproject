@@ -4,7 +4,7 @@ import logo from '../assets/logo.png'
 
 const Navbar = () => {
   return (
-    <div className="navbar py-0 px-[5%] md:px-[10%] backdrop-blur-md shadow-lg border-b border-white/10 absolute top-0">
+    <div className="navbar sticky  py-0 px-[5%] md:px-[10%] backdrop-blur-md shadow-lg border-b border-white/10 top-0 z-50">
   <div className="navbar-start">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
