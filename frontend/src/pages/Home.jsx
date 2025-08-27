@@ -126,7 +126,7 @@ const Home = () => {
     <LightRays/>
     <Navbar/>
     <div className='mt-4 px-[5%] md:px-[10%] flex flex-col justify-center items-center lg:px-0 lg:max-w-screen-xl lg:mx-auto'>
-        <div id='hero' className='flex flex-col justify-start items-center my-36 mb-0'>
+        <div id='hero' className='flex flex-col justify-start items-center my-16 mb-0 md:my-28 md:mb-0 lg:my-36 lg:mb-0'>
            <div className='flex flex-row justify-center items-center text-center bg-base-200 px-4 py-1 my-4 rounded-2xl border border-white/10 animate-fade-in-down'>
             <div className='h-2 w-2 bg-green-500 rounded-full mr-2 animate-pulse'></div>
             <ShinyText
