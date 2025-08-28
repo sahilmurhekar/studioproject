@@ -44,7 +44,7 @@ const AnimatedCursor = () => {
     <div className="hidden md:block" style={{ cursor: 'none' }}>
       {/* Custom Cursor */}
       <div
-        className="fixed top-0 left-0 pointer-events-none z-50 transition-all duration-150 ease-out"
+        className="fixed top-0 left-0 pointer-events-none z-[100] transition-all duration-150 ease-out"
         style={{
           transform: `translate(${position.x - 10}px, ${position.y - 10}px)`,
         }}
