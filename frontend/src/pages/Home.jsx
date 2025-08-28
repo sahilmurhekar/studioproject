@@ -9,6 +9,7 @@ import flstudio2 from '../assets/fl2.png'
 import Magnet from '../components/Magnet';
 import SpotlightCard from '../components/SpotlightCard';
 import Socials from '../components/Socials'
+import AnimatedCursor from '../components/AnimatedCursor'
 
 const Home = () => {
   const aboutRef = useRef(null);
@@ -123,10 +124,17 @@ const Home = () => {
 
   return (
     <>
+    <AnimatedCursor
+        size={8}
+        trailSize={40}
+        color="rgba(154,115,201,0.95)"
+        ease={0.14}
+        hoverScale={1.8}
+      />
     <LightRays/>
     <Navbar/>
-    <div className='mt-4 px-[5%] md:px-[10%] flex flex-col justify-center items-center lg:px-0 lg:max-w-screen-xl lg:mx-auto'>
-        <div id='hero' className='flex flex-col justify-start items-center my-16 mb-0 md:my-28 md:mb-0 lg:my-36 lg:mb-0'>
+    <div className='px-[5%] md:px-[10%] flex flex-col justify-center items-center lg:px-0 lg:max-w-screen-xl lg:mx-auto'>
+        <div id='hero' className='flex flex-col justify-start items-center my-16 mb-0 md:my-28 md:mb-0 lg:mb-0 lg:max-h-screen lg:my-24'>
            <div className='flex flex-row justify-center items-center text-center bg-base-200 px-4 py-1 my-4 rounded-2xl border border-white/10 animate-fade-in-down'>
             <div className='h-2 w-2 bg-green-500 rounded-full mr-2 animate-pulse'></div>
             <ShinyText
@@ -162,7 +170,7 @@ const Home = () => {
                         py-2 px-5
                         text-sm font-bold text-black
                         hover:bg-zinc-300
-                        hover:shadow-[0_0_10px_rgba(59,130,246,0.7)]
+                        hover:shadow-[0_0_10px_rgba(237,5,2370.8)]
                         hover:scale-105
                         rounded-md
                         transition-all duration-300
@@ -175,7 +183,7 @@ const Home = () => {
                 <Mouse size={25} className='mt-28 animate-float'/>
         </div>
 
-        <div ref={aboutRef} id='about' className='flex flex-col justify-center items-center w-full py-48 lg:pb-36 pb-0'>
+        <div ref={aboutRef} id='about' className='flex flex-col justify-center items-center w-full py-48 lg:py-48 lg:pb-36 pb-0'>
             <div className='flex flex-row justify-center items-center text-center px-4 py-1 lg:mb-16 rounded-2xl border border-white/10 bg-base-200 hover:scale-105 transition-transform duration-300'>
             <ShinyText
                 text="About"
@@ -186,14 +194,9 @@ const Home = () => {
             </div>
             <div className='flex flex-col-reverse lg:flex-row justify-between items-center gap-10 mt-8'>
                 <div className='flex flex-col justify-center lg:items-start items-center lg:text-left text-center text-sm md:text-lg lg:w-full animate-slide-in-left'>
-                    <ShinyText
-                text="Royal Musical Studios is where passion meets professionalism. Built by musicians for musicians, our studio is designed to be a creative sanctuary — a space where ideas flow freely and are transformed into polished masterpieces.
+                    <p>Royal Musical Studios is where passion meets professionalism. Built by musicians for musicians, our studio is designed to be a creative sanctuary — a space where ideas flow freely and are transformed into polished masterpieces.
                     We specialize in guiding artists at every stage, from raw inspiration to the final track. With state-of-the-art recording equipment, seasoned producers, and a team that lives and breathes music, we help you create songs that don't just sound great — they resonate.
-                    For us, every project is personal. Every artist has a story, and we make sure that story is told through powerful melodies, compelling lyrics, and unforgettable production."
-                disabled={false}
-                speed={2}
-                className=''
-                />
+                    For us, every project is personal. Every artist has a story, and we make sure that story is told through powerful melodies, compelling lyrics, and unforgettable production.</p>
                 <a href='/beats' className='mt-16 w-40 bg-transparent flex justify-center items-center py-2 px-5 text-sm font-bold text-white border border-white/70 hover:border-white hover:shadow-[0_0_10px_rgba(100,100,100,0.7)] hover:scale-105 transition-all duration-300 rounded-md transform'>Explore Beats</a>
                 </div>
                 <div ref={aboutImageRef} className="flex justify-center lg:justify-end items-center">
@@ -207,7 +210,7 @@ const Home = () => {
                 </div>
             </div>
         </div>
-        <div ref={servicesRef} id='services' className='py-32 lg:py-18 pb-0'>
+        <div ref={servicesRef} id='services' className='py-32 lg:py-28 pb-0'>
             <div className='flex flex-col justify-center items-center'>
             <div className='flex w-25 flex-row justify-center items-center text-center bg-base-200 px-4 py-1 my-4 rounded-2xl border border-white/10 hover:scale-105 transition-transform duration-300'>
             <ShinyText
@@ -234,7 +237,7 @@ const Home = () => {
                         <h2 className="text-2xl font-bold">Song Recording</h2>
                       </div>
                       <p className="text-lg leading-relaxed">
-                          <ShinyText text="Experience professional-grade recording with pristine sound quality. Whether you're laying down vocals, instruments, or full tracks, our studio captures every detail with clarity and depth." className='text-center lg:text-left' />
+                          <p className='text-center lg:text-left'> Experience professional-grade recording with pristine sound quality. Whether you're laying down vocals, instruments, or full tracks, our studio captures every detail with clarity and depth. </p>
                       </p>
                       </SpotlightCard>
                 </div>
@@ -245,7 +248,7 @@ const Home = () => {
                         <h2 className="text-2xl font-bold">Songwriting & Lyric Assistance</h2>
                       </div>
                       <p className="text-lg leading-relaxed">
-                          <ShinyText text="Words can be tricky — but we make them sing. Our team helps craft original lyrics and melodies tailored to your voice, message, and audience, ensuring your music feels authentic and powerful."  className='text-center lg:text-left'/>
+                        <p  className='text-center lg:text-left'>Words can be tricky — but we make them sing. Our team helps craft original lyrics and melodies tailored to your voice, message, and audience, ensuring your music feels authentic and powerful.</p>
                       </p>
                       </SpotlightCard>
                 </div>
@@ -256,7 +259,7 @@ const Home = () => {
                         <h2 className="text-2xl font-bold">Music Composition</h2>
                       </div>
                       <p className="text-lg leading-relaxed">
-                          <ShinyText text="Need a unique tune or a score that stands out? From cinematic themes and soulful ballads to energetic EDM drops, we compose music across genres, giving your project a distinct identity."  className='text-center lg:text-left'/>
+                        <p  className='text-center lg:text-left'>Need a unique tune or a score that stands out? From cinematic themes and soulful ballads to energetic EDM drops, we compose music across genres, giving your project a distinct identity.</p>
                       </p>
                       </SpotlightCard>
                 </div>
@@ -267,7 +270,7 @@ const Home = () => {
                         <h2 className="text-2xl font-bold">Mixing & Mastering</h2>
                       </div>
                       <p className="text-lg leading-relaxed">
-                          <ShinyText text="The final touch that makes all the difference. Our mixing and mastering engineers polish your track, balancing every element so it's radio-ready, streaming-optimized, and stage-approved."  className='text-center lg:text-left'/>
+                        <p className='text-center lg:text-left'>The final touch that makes all the difference. Our mixing and mastering engineers polish your track, balancing every element so it's radio-ready, streaming-optimized, and stage-approved.</p>
                       </p>
                       </SpotlightCard>
                 </div>
@@ -278,7 +281,7 @@ const Home = () => {
                             <h2 className="text-2xl font-bold">Pre-Made Beats Library</h2>
                           </div>
                           <p className="text-lg leading-relaxed">
-                              <ShinyText text="Sometimes, only something original will do. We design custom beats and instrumentals built exclusively for you, ensuring your sound is one of a kind."  className='text-center lg:text-left'/>
+                            <p className='text-center lg:text-left'>Sometimes, only something original will do. We design custom beats and instrumentals built exclusively for you, ensuring your sound is one of a kind.</p>
                           </p>
                         </SpotlightCard>
                 </div>
@@ -293,7 +296,7 @@ const Home = () => {
                         py-2 px-5
                         text-sm font-bold text-black
                         hover:bg-zinc-300
-                        hover:shadow-[0_0_10px_rgba(59,130,246,0.7)]
+                       hover:shadow-[0_0_10px_rgba(237,5,2370.8)]
                         hover:scale-105
                         rounded-md
                         transition-all duration-300
@@ -502,19 +505,19 @@ const Home = () => {
                           resize-none
                       '
                   ></textarea>
-
+                <div className='flex justify-center'>
                   <button
                       type='submit'
                       disabled={isSubmitting}
                       className='
+                        w-90
+                        h-12
                           bg-gradient-to-r from-zinc-100 to-zinc-500
                           text-black
                           font-bold
                           py-4 px-8
                           rounded-md
-                          hover:from-zinc-500 hover:to-zinc-100
-                          hover:shadow-[0_0_10px_rgba(255,255,255,0.5)]
-                          hover:scale-102
+                          hover:shadow-[0_0_10px_rgba(237,5,2370.8)]
                           transition-all duration-300
                           transform
                           disabled:opacity-50
@@ -536,6 +539,7 @@ const Home = () => {
                         </>
                       )}
                   </button>
+                  </div>
                 </form>
               </SpotlightCard>
             </div>
