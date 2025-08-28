@@ -18,6 +18,7 @@ const Navbar = () => {
         <li><a href='/#services'>Services</a></li>
         <li><a href='/beats'>Market</a></li>
         <li><a href='/gallery'>Gallery</a></li>
+        <li><a href='/#contact'>Contact</a></li>
       </ul>
     </div>
     <a href="/"><img className='h-15 w-15' src={logo} alt="logo" /></a>
@@ -29,7 +30,7 @@ const Navbar = () => {
         <li className='px-1'><a href='/#services'>Services</a></li>
         <li className='px-1'><a href='/beats'>Market</a></li>
         <li className='px-1'><a href='/gallery'>Gallery</a></li>
-        <li className='px-1'><a href='#contact'>Contact</a></li>
+        <li className='px-1'><a href='/#contact'>Contact</a></li>
     </ul>
   </div>
 </div>
