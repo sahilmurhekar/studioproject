@@ -31,8 +31,7 @@ const Socials = () => {
     <h6 className="footer-title">Legal</h6>
     <a onClick={()=>document.getElementById('terms_modal').showModal()} className="link link-hover">Terms of use</a>
     <dialog id="terms_modal" className="modal modal-middle backdrop-blur-md">
-
-  <Legal className="modal-box max-h-[80vh] overflow-y-auto">
+  <Legal className="modal-box max-h-[80vh]">
     <h3 className="font-bold text-xl mb-4">Terms & Conditions</h3>
 
     <div className="space-y-3 text-sm leading-relaxed">
@@ -60,7 +59,7 @@ const Socials = () => {
 </dialog>
     <a onClick={()=>document.getElementById('privacy_modal').showModal()} className="link link-hover">Privacy policy</a>
     <dialog id="privacy_modal" className="modal modal-middle backdrop-blur-md">
-  <Legal className="modal-box max-h-[80vh] overflow-y-auto rounded-xl border border-white/30">
+  <Legal className="modal-box max-h-[80vh] rounded-xl border border-white/30">
     <h3 className="font-bold text-xl mb-4">Privacy Policy</h3>
 
     <div className="space-y-3 text-sm leading-relaxed">
