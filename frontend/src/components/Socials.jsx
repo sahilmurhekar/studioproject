@@ -28,64 +28,67 @@ const Socials = () => {
     <a href='mailto:sahil.murhekar2004@gmail.com' target='_blank' className="link link-hover">Join the team</a>
   </nav>
   <nav>
-    <h6 className="footer-title">Legal</h6>
-    <a onClick={()=>document.getElementById('terms_modal').showModal()} className="link link-hover">Terms of use</a>
-    <dialog id="terms_modal" className="modal modal-middle backdrop-blur-md">
-  <Legal className="modal-box max-h-[80vh]">
-    <h3 className="font-bold text-xl mb-4">Terms & Conditions</h3>
+  <h6 className="footer-title">Legal</h6>
 
-    <div className="space-y-3 text-sm leading-relaxed">
-      <p><strong>Use of Services:</strong> You must be 18+ (or the age of majority in your region) and agree to use our services lawfully.</p>
+  {/* Terms Modal */}
+  <a
+    onClick={() => document.getElementById("terms_modal").showModal()}
+    className="link link-hover"
+  >
+    Terms of use
+  </a>
+  <dialog id="terms_modal" className="modal backdrop-blur-md">
+    <Legal className="modal-box w-11/12 max-w-md max-h-[85vh] sm:max-h-[80vh] overflow-hidden rounded-xl border border-white/30 flex flex-col">
+      <h3 className="font-bold text-xl mb-4 flex-shrink-0">Terms & Conditions</h3>
 
-      <p><strong>Intellectual Property:</strong> All site content, music, and materials belong to <em>Royal Musical Studios</em> or its licensors. Unauthorized use is prohibited.</p>
+      <div className="space-y-3 text-sm leading-relaxed overflow-y-auto flex-1 pr-2">
+        <p><strong>Use of Services:</strong> You must be 18+ (or the age of majority in your region) and agree to use our services lawfully.</p>
+        <p><strong>Intellectual Property:</strong> All site content, music, and materials belong to <em>Royal Musical Studios</em> or its licensors. Unauthorized use is prohibited.</p>
+        <p><strong>User Content:</strong> By submitting content, you grant us rights to use it for service purposes and confirm you own or have rights to it.</p>
+        <p><strong>Payments & Refunds:</strong> Fees must be paid in full. Refunds are not entertained.</p>
+        <p><strong>Liability:</strong> We are not liable for indirect or incidental damages. Our liability is limited to the amount you paid us.</p>
+        <p><strong>Termination:</strong> We may suspend or terminate services if these Terms are violated.</p>
+        <p><strong>Governing Law:</strong> These Terms are governed by the laws of India.</p>
+      </div>
 
-      <p><strong>User Content:</strong> By submitting content, you grant us rights to use it for service purposes and confirm you own or have rights to it.</p>
+      <div className="modal-action flex justify-start mt-4 pt-3 border-t border-white/20 flex-shrink-0">
+        <form method="dialog" className="w-full">
+          <button className="btn w-full">Close</button>
+        </form>
+      </div>
+    </Legal>
+  </dialog>
 
-      <p><strong>Payments & Refunds:</strong> Fees must be paid in full. Refunds are not entertained.</p>
+  {/* Privacy Modal */}
+  <a
+    onClick={() => document.getElementById("privacy_modal").showModal()}
+    className="link link-hover"
+  >
+    Privacy policy
+  </a>
+  <dialog id="privacy_modal" className="modal backdrop-blur-md">
+    <Legal className="modal-box w-11/12 max-w-md max-h-[85vh] sm:max-h-[80vh] overflow-hidden rounded-xl border border-white/30 flex flex-col">
+      <h3 className="font-bold text-xl mb-4 flex-shrink-0">Privacy Policy</h3>
 
-      <p><strong>Liability:</strong> We are not liable for indirect or incidental damages. Our liability is limited to the amount you paid us.</p>
+      <div className="space-y-3 text-sm leading-relaxed overflow-y-auto flex-1 pr-2">
+        <p><strong>Information We Collect:</strong> We may collect your name, email, payment details, and usage data to provide and improve our services.</p>
+        <p><strong>Use of Information:</strong> Data is used for service delivery, transactions, communication, and legal compliance.</p>
+        <p><strong>Sharing:</strong> We do not sell your data. We may share it with service providers or legal authorities when necessary.</p>
+        <p><strong>Security:</strong> We implement safeguards, but no system is 100% secure.</p>
+        <p><strong>Your Rights:</strong> You may access, update, or request deletion of your data by contacting us at <a href="mailto:sahil.murhekar2004@gmail.com" className="text-blue-600 underline">sahil.murhekar2004@gmail.com</a>.</p>
+        <p><strong>Children:</strong> Our services are not directed to users under 13.</p>
+        <p><strong>Updates:</strong> We may revise this policy, and changes will be posted on this page.</p>
+      </div>
 
-      <p><strong>Termination:</strong> We may suspend or terminate services if these Terms are violated.</p>
+      <div className="modal-action flex justify-start mt-4 pt-3 border-t border-white/20 flex-shrink-0">
+        <form method="dialog" className="w-full">
+          <button className="btn w-full">Close</button>
+        </form>
+      </div>
+    </Legal>
+  </dialog>
+</nav>
 
-      <p><strong>Governing Law:</strong> These Terms are governed by the laws of India.</p>
-    </div>
-
-    <div className="modal-action flex justify-start">
-      <form method="dialog">
-        <button className="btn">Close</button>
-      </form>
-    </div>
-  </Legal>
-</dialog>
-    <a onClick={()=>document.getElementById('privacy_modal').showModal()} className="link link-hover">Privacy policy</a>
-    <dialog id="privacy_modal" className="modal modal-middle backdrop-blur-md">
-  <Legal className="modal-box max-h-[80vh] rounded-xl border border-white/30">
-    <h3 className="font-bold text-xl mb-4">Privacy Policy</h3>
-
-    <div className="space-y-3 text-sm leading-relaxed">
-      <p><strong>Information We Collect:</strong> We may collect your name, email, payment details, and usage data to provide and improve our services.</p>
-
-      <p><strong>Use of Information:</strong> Data is used for service delivery, transactions, communication, and legal compliance.</p>
-
-      <p><strong>Sharing:</strong> We do not sell your data. We may share it with service providers or legal authorities when necessary.</p>
-
-      <p><strong>Security:</strong> We implement safeguards, but no system is 100% secure.</p>
-
-      <p><strong>Your Rights:</strong> You may access, update, or request deletion of your data by contacting us at <a href="mailto:sahil.murhekar2004@gmail.com" className="text-blue-600 underline">sahil.murhekar2004@gmail.com</a>.</p>
-
-      <p><strong>Children:</strong> Our services are not directed to users under 13.</p>
-
-      <p><strong>Updates:</strong> We may revise this policy, and changes will be posted on this page.</p>
-    </div>
-
-    <div className="modal-action flex justify-start">
-      <form method="dialog">
-        <button className="btn">Close</button>
-      </form>
-    </div>
-  </Legal>
-</dialog>
-  </nav>
 </footer>
   )
 }
