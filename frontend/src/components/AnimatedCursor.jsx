@@ -41,19 +41,18 @@ const AnimatedCursor = () => {
   }, []);
 
   return (
-    <div style={{ cursor: 'none' }}>
+    <div className="hidden md:block" style={{ cursor: 'none' }}>
       {/* Custom Cursor */}
       <div
-        className={`fixed top-0 left-0 pointer-events-none z-50 transition-all duration-150 ease-out`}
+        className="fixed top-0 left-0 pointer-events-none z-50 transition-all duration-150 ease-out"
         style={{
           transform: `translate(${position.x - 10}px, ${position.y - 10}px)`,
         }}
       >
         {/* Main cursor dot */}
-        <div
-          className={`w-4 h-4 rounded-full transition-all duration-300 bg-purple-700`}
-        />
+        <div className="w-4 h-4 rounded-full transition-all duration-300 bg-purple-700" />
       </div>
+
       <style jsx>{`
         @keyframes pulse {
           0%, 100% {
