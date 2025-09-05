@@ -10,6 +10,9 @@ import Profile from './pages/Profile'
 import ProtectedRoute from './components/ProtectedRoute'
 import Collections from './pages/Collections'
 import { AuthProvider } from './contexts/AuthContext'
+import TermsAndConditions from './pages/TermsAndConditions'
+import PrivacyPolicy from './pages/PrivacyPolicy'
+import RefundPolicy from './pages/RefundPolicy'
 
 function App() {
   return (
@@ -22,6 +25,10 @@ function App() {
           <Route path='/gallery' element={<Gallery/>}/>
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
+          <Route path='/terms_and_conditions' element={<TermsAndConditions/>}/>
+          <Route path='/privacy_policy' element={<PrivacyPolicy/>}/>
+          <Route path='/refund_policy' element={<RefundPolicy/>}/>
+
 
           {/* Protected Routes */}
           <Route

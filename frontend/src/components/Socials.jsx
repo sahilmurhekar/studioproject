@@ -1,6 +1,5 @@
 import React from 'react'
 import logo from '../assets/logo.png'
-import LegalNav from './LegalNav'
 
 const Socials = () => {
   return (
@@ -29,7 +28,10 @@ const Socials = () => {
   </nav>
   <nav>
   <h6 className="footer-title">Legal</h6>
-    <LegalNav/>
+    <a href='/terms_and_conditions' className="link link-hover">Terms & Conditions</a>
+    <a href='/refund_policy' className="link link-hover">Refund Policy</a>
+    <a href='/privacy_policy' className="link link-hover">Privacy Policy</a>
+
 </nav>
 
 </footer>
