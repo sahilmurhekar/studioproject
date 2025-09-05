@@ -1,1 +1,1 @@
-export const API_BASE_URL = "https://rms-backend-mjhomvlyb-sahil-murhekars-projects.vercel.app/"
+export const API_BASE_URL = "https://studioproject-nevs.vercel.app"

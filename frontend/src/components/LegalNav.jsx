@@ -163,10 +163,10 @@ const LegalNav = () => {
         <p>
           <strong>Your Rights:</strong> You may access, update, or request deletion of your data by contacting us at{' '}
           <a
-            href="mailto:sahil.murhekar2004@gmail.com"
+            href="mailto:royalmusicalstudios@gmail.com"
             className="text-blue-400 hover:text-blue-300 underline"
           >
-            sahil.murhekar2004@gmail.com
+            royalmusicalstudios@gmail.com
           </a>.
         </p>
         <p>
