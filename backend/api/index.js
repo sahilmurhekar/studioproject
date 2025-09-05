@@ -40,14 +40,14 @@ app.use(async (req, res, next) => {
   }
 });
 
-// --- Routes: identical logic/content to server.js, but WITHOUT the leading /api ---
+// --- Routes: with /api prefix for Vercel ---
 
-// Contact API (existing)
-app.post("/contact", async (req, res) => {
+// Contact API
+app.post("/api/contact", async (req, res) => {
   const { name, email, phone, subject, message, serviceType } = req.body;
 
   try {
-    // NOTE: nodemailer API uses createTransport (not createTransporter)
+    // Fixed: createTransport (not createTransporter)
     const transporter = nodemailer.createTransport({
       host: process.env.MAIL_HOST,
       port: process.env.MAIL_PORT,
@@ -115,7 +115,7 @@ app.post("/contact", async (req, res) => {
 });
 
 // Get all beats
-app.get("/beats", async (req, res) => {
+app.get("/api/beats", async (req, res) => {
   try {
     const beats = await db.collection("beats").find({}).toArray();
     res.status(200).json({ success: true, beats });
@@ -125,8 +125,8 @@ app.get("/beats", async (req, res) => {
   }
 });
 
-// Improved delete user collection endpoint (kept as-is)
-app.delete("/user-collection/:email", async (req, res) => {
+// Delete user collection endpoint
+app.delete("/api/user-collection/:email", async (req, res) => {
   try {
     const { email } = req.params;
     const decodedEmail = decodeURIComponent(email);
@@ -218,7 +218,7 @@ app.delete("/user-collection/:email", async (req, res) => {
 });
 
 // Get user collection (saved & purchased beats)
-app.get("/user-collection/:email", async (req, res) => {
+app.get("/api/user-collection/:email", async (req, res) => {
   try {
     const { email } = req.params;
     let userCollection = await db.collection("user_collections").findOne({ email });
@@ -243,7 +243,7 @@ app.get("/user-collection/:email", async (req, res) => {
 });
 
 // Save beat to user collection
-app.post("/save-beat", async (req, res) => {
+app.post("/api/save-beat", async (req, res) => {
   try {
     const { email, beatId } = req.body;
 
@@ -264,7 +264,7 @@ app.post("/save-beat", async (req, res) => {
 });
 
 // Remove beat from saved collection
-app.post("/unsave-beat", async (req, res) => {
+app.post("/api/unsave-beat", async (req, res) => {
   try {
     const { email, beatId } = req.body;
 
@@ -284,7 +284,7 @@ app.post("/unsave-beat", async (req, res) => {
 });
 
 // Purchase beat (simplified for now)
-app.post("/purchase-beat", async (req, res) => {
+app.post("/api/purchase-beat", async (req, res) => {
   try {
     const { email, beatId } = req.body;
 
@@ -306,6 +306,5 @@ app.post("/purchase-beat", async (req, res) => {
   }
 });
 
-// --- Export serverless handler for Vercel ---
+// Export serverless handler for Vercel
 export default serverless(app);
-
