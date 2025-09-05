@@ -9,16 +9,20 @@ dotenv.config();
 
 const app = express();
 
-// Middleware
-app.use(cors({
+// CORS setup
+const corsOptions = {
   origin: [
-    "https://royalmusicalstudios.vercel.app",  // your frontend
-    "http://localhost:5173" // for local dev
+    "https://royalmusicalstudios.vercel.app",  // production frontend
+    "http://localhost:3000" // dev frontend
   ],
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true
-}));
+};
+
+app.use(cors(corsOptions));
+app.options("*", cors(corsOptions)); // <-- handle preflight requests
+
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true }));
 
