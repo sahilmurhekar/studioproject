@@ -10,6 +10,7 @@ import Magnet from '../components/Magnet';
 import SpotlightCard from '../components/SpotlightCard';
 import Socials from '../components/Socials'
 import AnimatedCursor from '../components/AnimatedCursor'
+import { API_BASE_URL } from '../config'
 
 const Home = () => {
   const aboutRef = useRef(null);
@@ -22,7 +23,7 @@ const Home = () => {
   const whyUsImageRef = useRef(null);
   const whyUsContentRef = useRef(null);
   const contactInfoRef = useRef(null);
-
+    const [isSent, setIsSent] = useState(false);
   // Form state
   const [formData, setFormData] = useState({
     name: '',
@@ -50,6 +51,7 @@ const Home = () => {
         rootMargin: '0px 0px -50px 0px'
       }
     );
+
 
     const elements = [
       aboutRef.current,
@@ -87,40 +89,40 @@ const Home = () => {
   };
 
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
+  e.preventDefault();
+  setIsSubmitting(true);
+  setIsSent(false);
 
-    try {
-      // Replace with your actual API endpoint
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
+  try {
+    const response = await fetch(`{API_BASE_URL}/api/contact`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
+
+    if (response.ok) {
+      // Clear form
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        subject: "",
+        message: "",
+        serviceType: "recording",
       });
-
-      if (response.ok) {
-        // Handle success
-        alert('Message sent successfully!');
-        setFormData({
-          name: '',
-          email: '',
-          phone: '',
-          subject: '',
-          message: '',
-          serviceType: 'recording'
-        });
-      } else {
-        throw new Error('Failed to send message');
-      }
-    } catch (error) {
-      console.error('Error:', error);
-      alert('Failed to send message. Please try again.');
-    } finally {
-      setIsSubmitting(false);
+      setIsSent(true);  // ✅ mark as sent
+    } else {
+      throw new Error("Failed to send message");
     }
-  };
+  } catch (error) {
+    console.error("Error:", error);
+  } finally {
+    setIsSubmitting(false);
+    // Reset "Sent" state after a few seconds if you like
+    setTimeout(() => setIsSent(false), 4000);
+  }
+};
+
 
   return (
     <>
@@ -452,12 +454,12 @@ const Home = () => {
                             text-sm
                         '
                     >
-                        <option value='recording'>Song Recording</option>
-                        <option value='songwriting'>Songwriting & Lyrics</option>
-                        <option value='composition'>Music Composition</option>
-                        <option value='mixing'>Mixing & Mastering</option>
-                        <option value='beats'>Custom Beats</option>
-                        <option value='other'>Other</option>
+                        <option value='Song Recording'>Song Recording</option>
+                        <option value='Songwriting & Lyrics'>Songwriting & Lyrics</option>
+                        <option value='Music Composition'>Music Composition</option>
+                        <option value='Mixing & Mastering'>Mixing & Mastering</option>
+                        <option value='Custom Beats'>Custom Beats</option>
+                        <option value='Other'>Other</option>
                     </select>
                   </div>
 
@@ -507,38 +509,36 @@ const Home = () => {
                   ></textarea>
                 <div className='flex justify-center'>
                   <button
-                      type='submit'
-                      disabled={isSubmitting}
-                      className='
-                        w-90
-                        h-12
-                          bg-gradient-to-r from-zinc-100 to-zinc-500
-                          text-black
-                          font-bold
-                          py-4 px-8
-                          rounded-md
-                          hover:shadow-[0_0_10px_rgba(237,5,2370.8)]
-                          transition-all duration-300
-                          transform
-                          disabled:opacity-50
-                          disabled:cursor-not-allowed
-                          disabled:hover:scale-100
-                          flex items-center justify-center gap-2
-                          cursor-pointer
-                      '
-                  >
-                      {isSubmitting ? (
-                        <>
-                          <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
-                          Sending...
-                        </>
-                      ) : (
-                        <>
-                          <Send size={20} />
-                          Send Message
-                        </>
-                      )}
-                  </button>
+  type="submit"
+  disabled={isSubmitting}
+  className="
+    w-90 h-12
+    bg-gradient-to-r from-zinc-100 to-zinc-500
+    text-black font-bold
+    py-4 px-8 rounded-md
+    hover:shadow-[0_0_10px_rgba(237,5,2370.8)]
+    transition-all duration-300
+    transform
+    disabled:opacity-50 disabled:cursor-not-allowed
+    disabled:hover:scale-100
+    flex items-center justify-center gap-2 cursor-pointer
+  "
+>
+  {isSubmitting ? (
+    <>
+      <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
+      Sending...
+    </>
+  ) : isSent ? (
+    <>✅ Sent</>
+  ) : (
+    <>
+      <Send size={20} />
+      Send Message
+    </>
+  )}
+</button>
+
                   </div>
                 </form>
               </SpotlightCard>

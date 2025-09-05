@@ -6,37 +6,58 @@ import Beats from './pages/Beats'
 import Payment from './pages/Payment'
 import Login from './pages/Login'
 import Register from './pages/Register'
+import Profile from './pages/Profile'
 import ProtectedRoute from './components/ProtectedRoute'
+import Collections from './pages/Collections'
+import { AuthProvider } from './contexts/AuthContext'
 
 function App() {
   return (
     <Router>
-      <Routes>
-        {/* Public Routes */}
-        <Route path='/' element={<Home/>}/>
-        <Route path='/home' element={<Home/>}/>
-        <Route path='/gallery' element={<Gallery/>}/>
-        <Route path="/login/*" element={<Login />} />
-        <Route path="/register/*" element={<Register />} />
+      <AuthProvider>
+        <Routes>
+          {/* Public Routes */}
+          <Route path='/' element={<Home/>}/>
+          <Route path='/home' element={<Home/>}/>
+          <Route path='/gallery' element={<Gallery/>}/>
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
 
-        {/* Protected Routes */}
-        <Route
-          path='/beats'
-          element={
-            <ProtectedRoute>
-              <Beats/>
-            </ProtectedRoute>
-          }
-        />
-        <Route
-          path='/payment'
-          element={
-            <ProtectedRoute>
-              <Payment/>
-            </ProtectedRoute>
-          }
-        />
-      </Routes>
+          {/* Protected Routes */}
+          <Route
+            path='/beats'
+            element={
+              <ProtectedRoute>
+                <Beats/>
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path='/payment'
+            element={
+              <ProtectedRoute>
+                <Payment/>
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path='/collections'
+            element={
+              <ProtectedRoute>
+                <Collections />
+              </ProtectedRoute>
+            }
+          />
+           <Route
+            path='/profile'
+            element={
+              <ProtectedRoute>
+                <Profile />
+              </ProtectedRoute>
+            }
+          />
+        </Routes>
+      </AuthProvider>
     </Router>
   )
 }
