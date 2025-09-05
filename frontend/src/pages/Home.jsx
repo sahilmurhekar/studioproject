@@ -10,7 +10,7 @@ import Magnet from '../components/Magnet';
 import SpotlightCard from '../components/SpotlightCard';
 import Socials from '../components/Socials'
 import AnimatedCursor from '../components/AnimatedCursor'
-import { API_BASE_URL } from '../config'
+import {API_BASE_URL} from '../config'
 
 const Home = () => {
   const aboutRef = useRef(null);
@@ -94,7 +94,7 @@ const Home = () => {
   setIsSent(false);
 
   try {
-    const response = await fetch(`{API_BASE_URL}/api/contact`, {
+    const response = await fetch(`${API_BASE_URL}/api/contact`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),

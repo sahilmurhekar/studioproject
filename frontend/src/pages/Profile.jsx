@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { LogOut, Trash2, Shield, User, Mail, Calendar, CheckCircle, AlertCircle, Camera } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
 import { useNavigate } from 'react-router-dom';
-import { API_BASE_URL } from '../config';
 import Navbar from '../components/Navbar';
 import LightRays from '../components/LightRays';
 import DeleteAccountModal from '../components/DeleteAccountModal'; // Add this import
