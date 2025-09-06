@@ -3,9 +3,9 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import Navbar from '../components/Navbar';
 import LightRays from '../components/LightRays';
-import AnimatedCursor from '../components/AnimatedCursor';
 import ShinyText from '../components/ShinyText';
 import SpotlightCard from '../components/SpotlightCard';
+import GoogleIcon from '../components/GoogleIcon';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -48,13 +48,6 @@ const Login = () => {
 
   return (
     <>
-      <AnimatedCursor
-        size={8}
-        trailSize={40}
-        color="rgba(154,115,201,0.95)"
-        ease={0.14}
-        hoverScale={1.8}
-      />
       <LightRays />
       <Navbar />
 
@@ -117,16 +110,15 @@ const Login = () => {
                   <div className="absolute inset-0 flex items-center">
                     <div className="w-full border-t border-white/20" />
                   </div>
-                  <div className="relative flex justify-center text-sm">
-                    <span className="px-2 bg-black text-gray-400">Or continue with</span>
+                  <div className="relative flex mb-6 justify-center text-sm">
                   </div>
                 </div>
 
                 <button
                   onClick={handleGoogleSignIn}
                   disabled={loading}
-                  className="mt-3 w-full flex justify-center py-3 px-4 border border-white/20 rounded-lg text-white bg-white/5 hover:bg-white/10 transition-all duration-300 disabled:opacity-50"
-                >
+                  className="mt-3 w-full flex items-center gap-4 justify-center py-3 px-4 border border-white/20 rounded-lg text-white bg-white/5 hover:bg-white/10 transition-all duration-300 disabled:opacity-50"
+                > <GoogleIcon/>
                   {loading ? 'Signing in...' : 'Sign in with Google'}
                 </button>
               </div>

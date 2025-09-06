@@ -9,7 +9,6 @@ import flstudio2 from '../assets/fl2.png'
 import Magnet from '../components/Magnet';
 import SpotlightCard from '../components/SpotlightCard';
 import Socials from '../components/Socials'
-import AnimatedCursor from '../components/AnimatedCursor'
 import {API_BASE_URL} from '../config'
 
 const Home = () => {
@@ -108,7 +107,7 @@ const Home = () => {
         phone: "",
         subject: "",
         message: "",
-        serviceType: "recording",
+        serviceType: "",
       });
       setIsSent(true);  // ✅ mark as sent
     } else {
@@ -126,13 +125,6 @@ const Home = () => {
 
   return (
     <>
-    <AnimatedCursor
-        size={8}
-        trailSize={40}
-        color="rgba(154,115,201,0.95)"
-        ease={0.14}
-        hoverScale={1.8}
-      />
     <LightRays/>
     <Navbar/>
     <div className='px-[5%] md:px-[10%] flex flex-col justify-center items-center lg:px-0 lg:max-w-screen-xl lg:mx-auto'>
@@ -380,7 +372,7 @@ const Home = () => {
                         placeholder='Your Name *'
                         required
                         className='
-                            bg-base-200
+                            bg-base-200/40
                             text-white
                             placeholder-white/50
                             border border-white/20
@@ -401,7 +393,7 @@ const Home = () => {
                         placeholder='Your Email *'
                         required
                         className='
-                            bg-base-200
+                            bg-base-200/40
                             text-white
                             placeholder-white/50
                             border border-white/20
@@ -424,7 +416,7 @@ const Home = () => {
                         onChange={handleInputChange}
                         placeholder='Your Phone Number'
                         className='
-                            bg-base-200
+                            bg-base-200/40
                             text-white
                             placeholder-white/50
                             border border-white/20
@@ -442,7 +434,7 @@ const Home = () => {
                         value={formData.serviceType}
                         onChange={handleInputChange}
                         className='
-                            bg-base-200
+                            bg-base-200/40
                             text-white
                             border border-white/20
                             rounded-md
@@ -471,7 +463,7 @@ const Home = () => {
                       placeholder='Subject *'
                       required
                       className='
-                          bg-base-200
+                          bg-base-200/40
                           text-white
                           placeholder-white/50
                           border border-white/20
@@ -493,7 +485,7 @@ const Home = () => {
                       required
                       rows={6}
                       className='
-                          bg-base-200
+                          bg-base-200/40
                           text-white
                           placeholder-white/50
                           border border-white/20

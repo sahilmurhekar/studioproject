@@ -24,7 +24,7 @@ const Socials = () => {
     <a href='#services' className="link link-hover">Services</a>
     <a href='#whyus' className="link link-hover">Why Us?</a>
     <a href='#contact' className="link link-hover">Contact</a>
-    <a href='mailto:sahil.murhekar2004@gmail.com' target='_blank' className="link link-hover">Join the team</a>
+    <a href='mailto:royalmusicalstudios@gmail.com' target='_blank' className="link link-hover">Join the team</a>
   </nav>
   <nav>
   <h6 className="footer-title">Legal</h6>

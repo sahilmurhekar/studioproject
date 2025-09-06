@@ -2,7 +2,6 @@ import React, {useState} from 'react'
 import Navbar from '../components/Navbar'
 import LightRays from '../components/LightRays'
 import SpotlightCard from '../components/SpotlightCard'
-import AnimatedCursor from '../components/AnimatedCursor'
 import ShinyText from '../components/ShinyText'
 import Socials from '../components/Socials'
 
@@ -26,13 +25,7 @@ const Gallery = () => {
 
   return (
     <>
-      <AnimatedCursor
-        size={8}
-        trailSize={40}
-        color="rgba(154,115,201,0.95)"
-        ease={0.14}
-        hoverScale={1.8}
-      />
+
       <LightRays/>
       <Navbar/>
       <div className='my-18 px-[5%] md:px-[10%] flex flex-col justify-center items-center lg:px-0 lg:max-w-screen-xl lg:mx-auto'>
@@ -52,7 +45,7 @@ const Gallery = () => {
               className="lg:w-90 lg:h-110 lg:flex lg:flex-col lg:justify-center hover:scale-105 transition-all duration-300 transform hover:-translate-y-2"
               spotlightColor="rgba(255, 255, 255, 0.2)"
             >
-              <div className='flex justify-center items-center mb-4'>
+              <div className='flex justify-center items-center my-4'>
                 <iframe
                   src={card.videoUrl}
                   title="YouTube video player"

@@ -3,7 +3,6 @@ import { useAuth } from "../contexts/AuthContext"; // Change from useUser
 import { Music, Play, Pause, Download } from "lucide-react";
 import Navbar from "../components/Navbar";
 import LightRays from "../components/LightRays";
-import AnimatedCursor from "../components/AnimatedCursor";
 import SpotlightCard from "../components/SpotlightCard";
 import ShinyText from "../components/ShinyText";
 import { API_BASE_URL } from "../config";
@@ -172,7 +171,6 @@ const Collections = () => {
   if (loading) {
     return (
       <>
-        <AnimatedCursor size={8} trailSize={40} color="rgba(154,115,201,0.95)" ease={0.14} hoverScale={1.8} />
         <LightRays />
         <Navbar />
         <div className="min-h-screen flex items-center justify-center">
@@ -184,7 +182,6 @@ const Collections = () => {
 
   return (
     <>
-      <AnimatedCursor size={8} trailSize={40} color="rgba(154,115,201,0.95)" ease={0.14} hoverScale={1.8} />
       <LightRays />
       <Navbar />
 

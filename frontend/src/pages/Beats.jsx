@@ -3,7 +3,6 @@ import { Play, Pause, Download, Heart, ShoppingCart, Music } from 'lucide-react'
 import { useAuth } from '../contexts/AuthContext'; // Change from useUser
 import Navbar from '../components/Navbar';
 import LightRays from '../components/LightRays';
-import AnimatedCursor from '../components/AnimatedCursor';
 import ShinyText from '../components/ShinyText';
 import SpotlightCard from '../components/SpotlightCard';
 import { API_BASE_URL } from '../config'; // ✅ Import API URL from env
@@ -171,7 +170,6 @@ const Beats = () => {
   if (loading) {
     return (
       <>
-        <AnimatedCursor size={8} trailSize={40} color="rgba(154,115,201,0.95)" ease={0.14} hoverScale={1.8} />
         <LightRays />
         <Navbar />
         <div className="min-h-screen flex items-center justify-center">
@@ -183,7 +181,6 @@ const Beats = () => {
 
   return (
     <>
-      <AnimatedCursor size={8} trailSize={40} color="rgba(154,115,201,0.95)" ease={0.14} hoverScale={1.8} />
       <LightRays />
       <Navbar />
 
